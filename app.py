@@ -8,6 +8,9 @@ app = Flask(__name__)
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 # Groqクライアントを作成
 client = Groq(api_key=GROQ_API_KEY)
+@app.route('/',methods = ['GET','POST'])
+def initial():
+    return "success"
 
 @app.route('/chat', methods=['POST'])
 def chat():
